@@ -14,6 +14,7 @@ pip install flowcp/
 ```python
 import jax 
 import jax.numpy as jnp
+import flowcp
 
 # generate fake data
 key = jax.random.key(0)
@@ -24,7 +25,7 @@ ytest = jax.random.normal(ycal (1, 32))
 
 # set alpha level, find tau_alpha
 alpha = 0.1
-l2_score = l2_conform()
+l2_score = flowcp.score.l2_nonconf()
 l2_score.fit(ycal, ycal_hat, alpha)
 
 # sample
