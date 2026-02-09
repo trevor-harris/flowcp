@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools"]
+build_backend = "setuptools.build_meta"
+
+[project]
+name = "flowcp"
+authors = [
+    {name = "Trevor Harris", email = "trevor.a.harris@uconn.edu"}
+]
+version = "0.0.1"
+dependencies = ["jax"]
+
