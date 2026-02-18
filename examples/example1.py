@@ -22,7 +22,7 @@ l2_score.fit(ycal, ycal_hat, alpha)
 l2_samp = flowcp.flow(l2_score, ycal, ytest_hat, 20)
 print(l2_samp.shape)
 
-#### sample across a range of alphs
+#### sample across a range of alphas
 alpha = jnp.linspace(0.0, 1.0, ycal.shape[0])
 l2_score.fit(ycal, ycal_hat, alpha)
 
