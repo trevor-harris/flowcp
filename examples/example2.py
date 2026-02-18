@@ -22,7 +22,7 @@ sob_score.fit(ycal, ycal_hat, alpha)
 sob_samp = flowcp.flow(sob_score, ycal, ytest_hat, 20)
 
 # verify score error
-print(sob_score.score(sob_samp, ytest_hat) - sob_score.tau)
+print(jnp.max(sob_score.score(sob_samp, ytest_hat) - sob_score.tau))
 
 #### sample across a range of alphas
 alpha = jnp.linspace(0.0, 1.0, ycal.shape[0])
@@ -32,6 +32,6 @@ sob_score.fit(ycal, ycal_hat, alpha)
 sob_samp = flowcp.flow(sob_score, ycal, ytest_hat, 20)
 
 # verify score error
-print(sob_score.score(sob_samp, ytest_hat) - sob_score.tau)
+print(jnp.max(sob_score.score(sob_samp, ytest_hat) - sob_score.tau))
 
 

@@ -37,7 +37,7 @@ l2_score.fit(ycal, ycal_hat, alpha)
 l2_samp = flowcp.flow(l2_score, ycal, ytest_hat, 20)
 
 # verify score error
-print(l2_score.score(l2_samp, ytest_hat) - l2_score.tau)
+print(jnp.max(l2_score.score(l2_samp, ytest_hat) - l2_score.tau))
 
 #### sample across a range of alphas
 alpha = jnp.linspace(0.0, 1.0, ycal.shape[0])
@@ -47,7 +47,7 @@ l2_score.fit(ycal, ycal_hat, alpha)
 l2_samp = flowcp.flow(l2_score, ycal, ytest_hat, 20)
 
 # verify score error
-print(l2_score.score(l2_samp, ytest_hat) - l2_score.tau)
+print(jnp.max(l2_score.score(l2_samp, ytest_hat) - l2_score.tau))
 ```
 
 ### Example 2 - White noise predictor (N, h, w, c)
@@ -76,7 +76,7 @@ sob_score.fit(ycal, ycal_hat, alpha)
 sob_samp = flowcp.flow(sob_score, ycal, ytest_hat, 20)
 
 # verify score error
-print(sob_score.score(sob_samp, ytest_hat) - sob_score.tau)
+print(jnp.max(sob_score.score(sob_samp, ytest_hat) - sob_score.tau))
 
 #### sample across a range of alphas
 alpha = jnp.linspace(0.0, 1.0, ycal.shape[0])
@@ -86,7 +86,7 @@ sob_score.fit(ycal, ycal_hat, alpha)
 sob_samp = flowcp.flow(sob_score, ycal, ytest_hat, 20)
 
 # verify score error
-print(sob_score.score(sob_samp, ytest_hat) - sob_score.tau)
+print(jnp.max(sob_score.score(sob_samp, ytest_hat) - sob_score.tau))
 ```
 ## Notes
 This package is under active development.
