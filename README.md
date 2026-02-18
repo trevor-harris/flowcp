@@ -48,4 +48,20 @@ print(l2_samp.shape)
 ## Notes
 This package is under active development.
 
-##
+## Cite us
+
+If you use `flowcp` in an academic paper, please cite [1]
+
+```bibtex
+@article{harris2026flow,
+  title={Flow-Based Conformal Predictive Distributions},
+  author={Harris, Trevor},
+  journal={arXiv preprint arXiv:2602.07633},
+  year={2026}
+}
+```
+## References
+<a id='1'>[1]</a>
+Harris T.; 
+Flow-Based Conformal Predictive Distributions;
+[arxiv link](https://arxiv.org/abs/2401.14657)
