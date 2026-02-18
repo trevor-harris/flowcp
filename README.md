@@ -64,4 +64,4 @@ If you use `flowcp` in an academic paper, please cite [1]
 <a id='1'>[1]</a>
 Harris T.; 
 Flow-Based Conformal Predictive Distributions;
-[arxiv link](https://arxiv.org/abs/2401.14657)
+[arxiv link](https://arxiv.org/abs/2602.07633v1)
