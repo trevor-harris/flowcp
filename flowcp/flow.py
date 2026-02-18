@@ -18,10 +18,11 @@ def flow(score, y0, yhat, steps=20):
   dt = 1/steps
 
   # select alpha levels
-  n_cal = score.tau.shape[0]
-  n_samp = y0.shape[0]
-  tau_idx = jnp.linspace(0, n_cal, n_samp, dtype = int)
-  tau = score.tau[tau_idx]
+  # n_cal = score.n
+  # n_samp = y0.shape[0]
+  # tau_idx = jnp.linspace(0, n_cal, n_samp, dtype = int)
+  # tau = jnp.asarray(score.tau)[tau_idx]
+  tau = score.tau
 
   for _ in range(steps):
     vel = velocity(score, y, yhat, tau, lam)
