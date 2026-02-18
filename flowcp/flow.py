@@ -4,8 +4,8 @@ import jax.numpy as jnp
 def velocity(score, y, yhat, tau, lam):
     s_val, s_grad = score.score_grad(y, yhat)
     s_diff = s_val - tau
-    s_norm = jnp.sum(s_grad**2, axis = (1, 2, 3), keepdims=True)
-    vel = -lam * s_diff[:,None,None,None] * (s_grad / s_norm)
+    s_norm = jnp.sum(s_grad**2, axis = 1, keepdims=True)
+    vel = -lam * s_diff[:,None] * (s_grad / s_norm)
     return vel
 velocity = jax.jit(velocity, static_argnums=0)
 

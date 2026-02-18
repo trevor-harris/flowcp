@@ -1,17 +1,3 @@
-# FlowCP
-
-## Overview
-`flowcp` implements Flow Based Conformal Predictive Distributions. 
-
-## Install
-```bash
-git clone https://github.com/trevor-harris/flowcp
-pip install flowcp/
-```
-
-## Examples
-
-```python
 import flowcp
 import jax
 import jax.numpy as jnp
@@ -32,9 +18,4 @@ l2_score.fit(ycal, ycal_hat, alpha)
 
 # sample at 20 steps, init from ycal
 l2_samp = flowcp.flow(l2_score, ycal, ytest_hat, 20)
-
-```
-## Notes
-This package is under active development.
-
-##
+print(l2_samp.shape)
