@@ -48,9 +48,9 @@ class l1_nonconf():
   
   def batch_score(self, y: jnp.ndarray, yhat: jnp.ndarray) -> jnp.ndarray:
     return jax.vmap(self._score, in_axes=(0, 0))(y, yhat)
-
-  score = jax.vmap(_score, (None, 0, 0))
-  score_grad = jax.vmap(jax.value_and_grad(_score, argnums = 1), (None, 0, 0))
+  
+  score      = jax.vmap(_score, (None, 0, None))
+  score_grad = jax.vmap(jax.value_and_grad(_score, argnums=1), (None, 0, None))
 
 # ============================================================
 # Huber
@@ -76,8 +76,8 @@ class huber_nonconf():
   def batch_score(self, y: jnp.ndarray, yhat: jnp.ndarray) -> jnp.ndarray:
     return jax.vmap(self._score, in_axes=(0, 0))(y, yhat)
 
-  score = jax.vmap(_score, (None, 0, 0))
-  score_grad = jax.vmap(jax.value_and_grad(_score, argnums = 1), (None, 0, 0))
+  score      = jax.vmap(_score, (None, 0, None))
+  score_grad = jax.vmap(jax.value_and_grad(_score, argnums=1), (None, 0, None))
 
 # ============================================================
 # Gaussian NLL
@@ -107,8 +107,8 @@ class gauss_nonconf():
   def batch_score(self, y: jnp.ndarray, yhat: jnp.ndarray) -> jnp.ndarray:
     return jax.vmap(self._score, in_axes=(0, 0))(y, yhat)
 
-  score = jax.vmap(_score, (None, 0, 0))
-  score_grad = jax.vmap(jax.value_and_grad(_score, argnums = 1), (None, 0, 0))
+  score      = jax.vmap(_score, (None, 0, None))
+  score_grad = jax.vmap(jax.value_and_grad(_score, argnums=1), (None, 0, None))
 
 
 class t_nonconf:
@@ -149,8 +149,8 @@ class t_nonconf:
   def batch_score(self, y: jnp.ndarray, yhat: jnp.ndarray) -> jnp.ndarray:
     return jax.vmap(self._score, in_axes=(0, 0))(y, yhat)
 
-  score = jax.vmap(_score, (None, 0, 0))
-  score_grad = jax.vmap(jax.value_and_grad(_score, argnums = 1), (None, 0, 0))
+  score      = jax.vmap(_score, (None, 0, None))
+  score_grad = jax.vmap(jax.value_and_grad(_score, argnums=1), (None, 0, None))
 
 # ============================================================
 # Sobolev (gradient) score

@@ -19,7 +19,7 @@ alpha = 0.1
 l2_score.fit(ycal, ycal_hat, alpha)
 
 # sample
-l2_samp = flowcp.flow(l2_score, ycal, ytest_hat, 20)
+l2_samp = flowcp.flow(l2_score, ycal, ytest_hat, 100)
 
 # verify score error
 print(l2_score.score(l2_samp, ytest_hat) - l2_score.tau)
@@ -29,7 +29,8 @@ alpha = jnp.linspace(0.0, 1.0, ycal.shape[0])
 l2_score.fit(ycal, ycal_hat, alpha)
 
 # sample
-l2_samp = flowcp.flow(l2_score, ycal, ytest_hat, 20)
+l2_samp = flowcp.flow(l2_score, ycal, ytest_hat, 100)
 
 # verify score error
 print(l2_score.score(l2_samp, ytest_hat) - l2_score.tau)
+print(jnp.mean(l2_score.score(l2_samp, ytest_hat) - l2_score.tau))
