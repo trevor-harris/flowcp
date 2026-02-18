@@ -12,7 +12,7 @@ ycal_hat = jax.random.normal(key_hat, (500, 32))
 ytest_hat = jax.random.normal(key_test, (1, 32))
 
 ##### define score
-l2_score = flowcp.score.l2_nonconf()
+l2_score = flowcp.l2_nonconf()
 
 #### sample at a fixed alpha level
 alpha = 0.1

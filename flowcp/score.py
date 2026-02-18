@@ -152,6 +152,7 @@ class t_nonconf:
   score      = jax.vmap(_score, (None, 0, None))
   score_grad = jax.vmap(jax.value_and_grad(_score, argnums=1), (None, 0, None))
 
+
 # ============================================================
 # Sobolev (gradient) score
 # ============================================================

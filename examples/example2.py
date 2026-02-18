@@ -12,7 +12,7 @@ ycal_hat = jax.random.normal(key_hat, (500, 32, 32, 3))
 ytest_hat = jax.random.normal(key_test, (1, 32, 32, 3))
 
 ##### define score
-sob_score = flowcp.score.sobolev_nonconf(lam = 10.0)
+sob_score = flowcp.sobolev_nonconf(lam = 10.0)
 
 #### sample at a fixed alpha level
 alpha = 0.1
